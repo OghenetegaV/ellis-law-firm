@@ -1,11 +1,11 @@
+import Image from "next/image";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { ColumnMotif } from "@/components/graphics/ColumnMotif";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Introduction() {
   return (
     <section className="border-t border-charcoal/10 bg-white">
-      <div className="mx-auto max-w-[90rem] px-6 py-24 sm:px-10 sm:py-32">
+      <div className="mx-auto max-w-[90rem] px-6 py-14 sm:px-10 sm:py-20">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <Reveal>
             <SectionEyebrow>The ELLIS Approach</SectionEyebrow>
@@ -21,8 +21,16 @@ export function Introduction() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="flex h-full min-h-[16rem] items-center justify-center border border-charcoal/10 p-10">
-              <ColumnMotif count={1} color="var(--color-antique-gold)" opacity={0.85} />
+            <div className="h-full p-2 sm:p-4">
+              <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/purposeful-image.png"
+                  alt="An ELLIS folio held with quiet confidence, set against classical architecture"
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </Reveal>
         </div>
