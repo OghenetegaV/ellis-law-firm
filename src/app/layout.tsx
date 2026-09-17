@@ -22,13 +22,14 @@ const siteTitle = "ELLIS | Barristers & Solicitors | Nigeria";
 const siteDescription =
   "ELLIS provides strategic legal counsel and representation to individuals, businesses and organisations in Nigeria.";
 const ogImage = {
-  url: "/purposeful-image.png",
-  width: 1536,
-  height: 1024,
+  url: "/og-image.jpg",
+  width: 1200,
+  height: 630,
   alt: "An ELLIS folio held with quiet confidence, set against classical architecture",
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ellis-firm.vercel.app"),
   title: {
     default: siteTitle,
     template: "%s | ELLIS",
