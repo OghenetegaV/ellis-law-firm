@@ -12,11 +12,9 @@ export function Introduction() {
             <h2 className="mt-6 max-w-lg font-serif text-3xl leading-tight text-charcoal sm:text-4xl lg:text-[2.75rem]">
               Law with purpose. Counsel with clarity.
             </h2>
-            <p className="mt-8 max-w-md text-base leading-relaxed text-charcoal/70">
-              Built on the belief that every lawful liberty is significant, ELLIS provides
-              strategic legal counsel and representation grounded in clarity, precision and
-              purpose. We work with individuals, businesses and organisations navigating legal
-              questions, commercial interests, disputes and important decisions.
+            <p className="mt-6 max-w-sm text-base leading-relaxed text-charcoal/70">
+              Clear, precise counsel — built on the belief that every lawful liberty is
+              significant.
             </p>
           </Reveal>
 

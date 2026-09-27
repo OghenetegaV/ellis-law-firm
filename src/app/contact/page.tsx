@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[90rem] px-6 py-24 sm:px-10 sm:py-32">
+      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-24">
         <div className="grid gap-16 lg:grid-cols-[1fr_1px_1.1fr] lg:gap-16">
           <div>
             <SectionEyebrow>Contact ELLIS</SectionEyebrow>
@@ -20,8 +20,7 @@ export default function ContactPage() {
               Start with clarity.
             </h1>
             <p className="mt-8 max-w-sm text-base leading-relaxed text-charcoal/70">
-              Whether you require legal advice, representation or guidance on a developing
-              matter, ELLIS welcomes enquiries from individuals, businesses and organisations.
+              Tell us what you need. We will respond in due course.
             </p>
           </div>
 

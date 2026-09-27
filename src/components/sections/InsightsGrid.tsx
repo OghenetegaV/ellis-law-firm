@@ -11,11 +11,11 @@ type InsightsGridProps = {
 export function InsightsGrid({ variant = "preview" }: InsightsGridProps) {
   return (
     <section className="border-t border-charcoal/10 bg-white">
-      <div className="mx-auto max-w-[90rem] px-6 py-24 sm:px-10 sm:py-28">
+      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-20">
         <Reveal>
           <SectionEyebrow>Insights</SectionEyebrow>
           <h2 className="mt-6 max-w-lg font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
-            Perspectives on law, business and the issues that matter.
+            Perspectives on law and business.
           </h2>
         </Reveal>
 

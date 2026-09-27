@@ -71,8 +71,7 @@ export function ContactForm() {
       <div className="border-l border-antique-gold py-2 pl-6">
         <p className="font-serif text-2xl text-charcoal">Thank you for reaching out.</p>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-charcoal/70">
-          Your enquiry has been received. A member of the ELLIS team will review it and respond
-          in due course.
+          We will respond in due course.
         </p>
         <div className="mt-8 max-w-md">
           <Disclaimer>

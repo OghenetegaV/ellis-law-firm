@@ -34,18 +34,15 @@ export const socialLinks: NavLink[] = [
 export const representGroups: RepresentGroup[] = [
   {
     title: "Individuals",
-    description:
-      "Legal counsel and representation focused on protecting rights, interests and lawful freedoms.",
+    description: "Protecting your rights and lawful freedoms.",
   },
   {
     title: "Businesses",
-    description:
-      "Practical legal guidance for businesses navigating transactions, contracts, compliance, disputes and growth.",
+    description: "Contracts, compliance, disputes and growth.",
   },
   {
     title: "Organisations",
-    description:
-      "Strategic legal support for organisations dealing with governance, legal obligations, disputes and complex decisions.",
+    description: "Governance, obligations and complex decisions.",
   },
 ];
 
@@ -53,88 +50,78 @@ export const practiceAreas: PracticeArea[] = [
   {
     slug: "litigation-dispute-resolution",
     title: "Litigation & Dispute Resolution",
-    description: "Strategic representation in civil and commercial disputes.",
+    description: "Civil and commercial disputes.",
   },
   {
     slug: "corporate-commercial-law",
     title: "Corporate & Commercial Law",
-    description: "Legal guidance for businesses, transactions and commercial relationships.",
+    description: "Transactions and commercial relationships.",
   },
   {
     slug: "real-estate-property-law",
     title: "Real Estate & Property Law",
-    description:
-      "Advice and representation relating to property transactions, documentation and disputes.",
+    description: "Property transactions and disputes.",
   },
   {
     slug: "contracts-agreements",
     title: "Contracts & Agreements",
-    description: "Drafting, review and negotiation of legally sound agreements.",
+    description: "Drafting, review and negotiation.",
   },
   {
     slug: "business-regulatory-compliance",
     title: "Business & Regulatory Compliance",
-    description: "Helping businesses understand and navigate applicable legal obligations.",
+    description: "Navigating your legal obligations.",
   },
   {
     slug: "alternative-dispute-resolution",
     title: "Alternative Dispute Resolution",
-    description: "Practical and strategic approaches to resolving disputes.",
+    description: "Resolving disputes without the courtroom.",
   },
   {
     slug: "employment-workplace-matters",
     title: "Employment & Workplace Matters",
-    description: "Legal guidance concerning employment relationships and workplace disputes.",
+    description: "Employment relationships and workplace disputes.",
   },
   {
     slug: "intellectual-property",
     title: "Intellectual Property",
-    description: "Advice concerning the protection and management of intellectual property rights.",
+    description: "Protecting and managing your IP.",
   },
 ];
 
 export const principles: Principle[] = [
-  { title: "Clarity", description: "Making complex legal issues understandable." },
-  { title: "Precision", description: "Approaching every matter with careful attention to detail." },
-  {
-    title: "Strategy",
-    description: "Considering both the immediate legal issue and the broader objective.",
-  },
-  {
-    title: "Integrity",
-    description: "Providing candid, principled and responsible legal counsel.",
-  },
-  {
-    title: "Discretion",
-    description: "Treating sensitive matters with professionalism and appropriate confidentiality.",
-  },
+  { title: "Clarity", description: "Complex issues, made simple." },
+  { title: "Precision", description: "Attention to every detail." },
+  { title: "Strategy", description: "The issue and the bigger goal." },
+  { title: "Integrity", description: "Candid, principled counsel." },
+  { title: "Discretion", description: "Your matters stay confidential." },
 ];
 
 export const approachSteps: ApproachStep[] = [
   {
     number: "01",
     step: "Understand",
-    description: "We listen carefully and identify the legal issues that matter.",
+    description: "We listen and identify what matters.",
   },
   {
     number: "02",
     step: "Analyse",
-    description: "We examine the law, facts, risks and available options.",
+    description: "We weigh the law, facts and risks.",
   },
   {
     number: "03",
     step: "Strategise",
-    description: "We develop a practical approach aligned with the client's objectives.",
+    description: "We plan around your objectives.",
   },
   {
     number: "04",
     step: "Advise",
-    description: "We provide clear and candid legal guidance.",
+    description: "Clear, candid guidance.",
   },
   {
     number: "05",
     step: "Represent",
-    description: "Where appropriate, we advocate and act on the client's behalf.",
+    description: "We act on your behalf.",
   },
 ];
 

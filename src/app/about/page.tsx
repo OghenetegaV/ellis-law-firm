@@ -12,20 +12,20 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Our Story",
-    body: "ELLIS was founded on a simple but deliberate conviction: that every lawful liberty is significant, and that legal counsel should reflect the weight of what is at stake for the people who seek it. From individual concerns to complex commercial matters, the firm was built to bring clarity and purpose to legal questions that matter.",
+    body: "ELLIS was founded on one conviction: every lawful liberty is significant.",
   },
   {
     title: "Our Philosophy",
-    body: "Law is not only a technical discipline but a means of protecting what people and organisations value most: their rights, their interests and their lawful freedoms. ELLIS approaches every matter with the understanding that behind each legal question is a person, a business or an organisation with something significant at stake.",
+    body: "Behind every legal question is someone with something significant at stake.",
   },
   {
     title: "Our Approach",
-    body: "ELLIS works through a structured, deliberate process: understanding the matter, analysing the law and the facts, developing a strategy aligned with the client's objectives, advising clearly, and representing where appropriate. A fuller account of this process is set out on our Our Approach page.",
+    body: "A structured process: understand, analyse, strategise, advise, represent.",
     link: { href: "/our-approach", label: "See Our Approach" },
   },
   {
     title: "Our Commitment",
-    body: "ELLIS is committed to clarity, precision, strategy, integrity and discretion in every matter it handles. The firm works with individuals, businesses and organisations, providing legal guidance intended to be practical, candid and responsible.",
+    body: "Clarity, precision, strategy, integrity and discretion in every matter.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="border-b border-charcoal/10 bg-white">
-        <div className="mx-auto max-w-[90rem] px-6 py-24 sm:px-10 sm:py-32">
+        <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-24">
           <SectionEyebrow>About ELLIS</SectionEyebrow>
           <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-tight text-charcoal sm:text-6xl">
             Built on principle. Guided by purpose.

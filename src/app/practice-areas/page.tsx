@@ -12,10 +12,10 @@ export default function PracticeAreasPage() {
   return (
     <>
       <section className="border-b border-charcoal/10 bg-white">
-        <div className="mx-auto max-w-[90rem] px-6 py-24 sm:px-10 sm:py-32">
+        <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-24">
           <SectionEyebrow>Our Practice</SectionEyebrow>
           <h1 className="mt-6 max-w-2xl font-serif text-4xl leading-tight text-charcoal sm:text-6xl">
-            Focused counsel across the matters that shape your interests.
+            Focused counsel, across every matter.
           </h1>
         </div>
       </section>

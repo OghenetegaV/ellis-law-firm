@@ -13,7 +13,7 @@ export function SignatureStatement() {
             Every lawful liberty is significant.
           </p>
           <p className="mt-8 text-sm uppercase tracking-wide-cap text-antique-gold sm:text-base">
-            Because rights matter. Interests matter. And the law matters.
+            Rights matter. Interests matter. The law matters.
           </p>
         </Reveal>
       </div>

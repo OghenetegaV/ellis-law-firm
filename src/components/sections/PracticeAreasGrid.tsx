@@ -14,13 +14,13 @@ export function PracticeAreasGrid({ variant = "preview" }: PracticeAreasGridProp
 
   return (
     <section className={variant === "preview" ? "border-t border-charcoal/10 bg-white" : "bg-white"}>
-      <div className="mx-auto max-w-[90rem] px-6 py-24 sm:px-10 sm:py-28">
+      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-20">
         {variant === "preview" && (
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <Reveal>
               <SectionEyebrow>Our Practice</SectionEyebrow>
               <h2 className="mt-6 max-w-lg font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
-                Focused counsel across the matters that shape your interests.
+                Focused counsel, across every matter.
               </h2>
             </Reveal>
           </div>

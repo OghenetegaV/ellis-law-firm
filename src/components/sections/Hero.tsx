@@ -28,17 +28,15 @@ function HeroText() {
       </Reveal>
 
       <Reveal delay={200}>
-        <p className="mt-9 max-w-[34rem] text-[17px] leading-[1.7] text-charcoal/75 sm:text-lg">
-          ELLIS provides strategic legal counsel and representation to individuals,
-          businesses and organisations. We protect rights, solve complex challenges and
-          deliver practical legal solutions with precision and purpose.
+        <p className="mt-8 max-w-[26rem] text-lg leading-[1.6] text-charcoal/75">
+          Strategic legal counsel for individuals, businesses and organisations.
         </p>
       </Reveal>
 
       <Reveal delay={300}>
         <Link
           href="/practice-areas"
-          className="group mt-9 inline-flex h-[54px] w-[280px] max-w-full items-center justify-between border border-burgundy bg-burgundy px-7 text-white transition-colors duration-300 hover:bg-burgundy-dark"
+          className="group mt-10 inline-flex h-[54px] w-[280px] max-w-full items-center justify-between border border-burgundy bg-burgundy px-7 text-white transition-colors duration-300 hover:bg-burgundy-dark"
         >
           <span className="text-xs font-semibold uppercase tracking-[0.15em]">
             Our Practice Areas
@@ -52,14 +50,6 @@ function HeroText() {
         </Link>
       </Reveal>
 
-      <Reveal delay={400}>
-        <div className="mt-16 flex items-stretch gap-4 sm:mt-20">
-          <span className="w-px shrink-0 self-stretch bg-antique-gold/70" aria-hidden="true" />
-          <p className="text-[11px] uppercase tracking-[0.28em] text-antique-gold sm:text-xs">
-            Authority &middot; Precision &middot; Discretion &middot; Strategy &middot; Purpose
-          </p>
-        </div>
-      </Reveal>
     </>
   );
 }
