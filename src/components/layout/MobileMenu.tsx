@@ -46,7 +46,7 @@ export function MobileMenu() {
       role="dialog"
       aria-modal="true"
       aria-label="Site navigation"
-      className={`fixed inset-0 z-[60] bg-white transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[60] bg-ivory transition-opacity duration-300 ${
         isOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
@@ -70,7 +70,7 @@ export function MobileMenu() {
             href={link.href}
             onClick={() => setIsOpen(false)}
             tabIndex={isOpen ? 0 : -1}
-            className="font-serif text-3xl text-charcoal transition-colors hover:text-burgundy"
+            className="font-serif text-4xl text-charcoal transition-colors hover:text-burgundy"
           >
             {link.label}
           </Link>
@@ -79,7 +79,7 @@ export function MobileMenu() {
           href="/contact"
           onClick={() => setIsOpen(false)}
           tabIndex={isOpen ? 0 : -1}
-          className="mt-4 inline-flex w-fit items-center justify-center border border-burgundy bg-burgundy px-8 py-3.5 text-xs font-semibold uppercase tracking-wide-cap text-white"
+          className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-burgundy px-8 py-4 text-[13px] font-semibold text-white"
         >
           Contact ELLIS
         </Link>

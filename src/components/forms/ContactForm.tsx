@@ -3,7 +3,6 @@
 import { useState, type FormEvent } from "react";
 import { FormField } from "@/components/forms/FormField";
 import { FormSelect } from "@/components/forms/FormSelect";
-import { Disclaimer } from "@/components/ui/Disclaimer";
 import { isRequired, isValidEmail, isValidPhone } from "@/lib/validation";
 
 const enquiryOptions = [
@@ -73,11 +72,9 @@ export function ContactForm() {
         <p className="mt-3 max-w-md text-sm leading-relaxed text-charcoal/70">
           We will respond in due course.
         </p>
-        <div className="mt-8 max-w-md">
-          <Disclaimer>
-            Submitting an enquiry does not by itself establish a lawyer-client relationship.
-          </Disclaimer>
-        </div>
+        <p className="mt-8 max-w-md text-xs text-charcoal/50">
+          Submitting an enquiry does not by itself establish a lawyer-client relationship.
+        </p>
       </div>
     );
   }
@@ -138,15 +135,15 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center justify-center border border-burgundy bg-burgundy px-10 py-3.5 text-xs font-semibold uppercase tracking-wide-cap text-white transition-colors hover:bg-burgundy-dark disabled:opacity-60"
+          className="inline-flex items-center justify-center rounded-full bg-burgundy px-10 py-4 text-[13px] font-semibold tracking-[0.04em] text-white shadow-soft transition-colors hover:bg-burgundy-dark disabled:opacity-60"
         >
-          {status === "submitting" ? "Submitting..." : "Submit Enquiry"}
+          {status === "submitting" ? "Submitting..." : "Submit enquiry"}
         </button>
       </div>
 
-      <Disclaimer>
+      <p className="text-xs text-charcoal/50">
         Submitting an enquiry does not by itself establish a lawyer-client relationship.
-      </Disclaimer>
+      </p>
     </form>
   );
 }

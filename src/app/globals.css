@@ -6,15 +6,45 @@
   --color-antique-gold: #b08d57;
   --color-charcoal: #252525;
   --color-sage: #8a9a7b;
-  --color-ivory: #faf7f2;
+  --color-ivory: #f7f3ed;
+  --color-sand: #ece3d5;
 
-  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
 
   --tracking-eyebrow: 0.22em;
   --tracking-wide-cap: 0.08em;
 
-  --breakpoint-xs: 22.5rem;
+  --shadow-soft: 0 20px 60px -20px rgba(107, 38, 53, 0.25);
+  --shadow-card: 0 30px 80px -30px rgba(37, 37, 37, 0.25);
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 28s linear infinite;
+  --animate-kenburns: kenburns 22s ease-in-out infinite alternate;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @keyframes kenburns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.09);
+    }
+  }
 }
 
 @layer base {
@@ -23,14 +53,14 @@
   }
 
   body {
-    background: #ffffff;
+    background: var(--color-ivory);
     color: var(--color-charcoal);
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
 
   ::selection {
-    background: var(--color-antique-gold);
+    background: var(--color-burgundy);
     color: #ffffff;
   }
 }
@@ -38,7 +68,7 @@
 @layer utilities {
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;

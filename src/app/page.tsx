@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { Marquee } from "@/components/ui/Marquee";
 import { Introduction } from "@/components/sections/Introduction";
 import { WhoWeRepresent } from "@/components/sections/WhoWeRepresent";
 import { PracticeAreasGrid } from "@/components/sections/PracticeAreasGrid";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Marquee />
       <Introduction />
       <WhoWeRepresent />
       <PracticeAreasGrid variant="preview" />

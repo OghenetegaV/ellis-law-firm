@@ -8,25 +8,27 @@ export const metadata: Metadata = {
 
 export default function TermsOfUsePage() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:px-10 sm:py-24">
-        <SectionEyebrow>Legal</SectionEyebrow>
-        <h1 className="mt-6 font-serif text-4xl text-charcoal sm:text-5xl">Terms of Use</h1>
-        <div className="mt-10 space-y-6 text-base leading-relaxed text-charcoal/70">
-          <p>
-            This website is provided by ELLIS for general informational purposes. By using this
-            website, you agree to use it lawfully and in a manner that does not infringe the
-            rights of, or restrict or inhibit the use and enjoyment of, this site by any third
-            party.
-          </p>
-          <p>
-            The content of this website, including text, graphics and the ELLIS name and
-            wordmark, is the property of ELLIS and may not be reproduced without permission.
-          </p>
-          <p>
-            ELLIS reserves the right to amend these terms at any time. Continued use of this
-            website following any changes constitutes acceptance of those changes.
-          </p>
+    <section className="pb-20 pt-36 sm:pt-44">
+      <div className="mx-auto max-w-3xl px-6 sm:px-10">
+        <div className="rounded-[2rem] bg-white p-8 shadow-card sm:p-14">
+          <SectionEyebrow>Legal</SectionEyebrow>
+          <h1 className="mt-6 font-serif text-4xl text-charcoal sm:text-5xl">Terms of Use</h1>
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-charcoal/70">
+            <p>
+              This website is provided by ELLIS for general informational purposes. By using this
+              website, you agree to use it lawfully and in a manner that does not infringe the
+              rights of, or restrict or inhibit the use and enjoyment of, this site by any third
+              party.
+            </p>
+            <p>
+              The content of this website, including text, graphics and the ELLIS name and
+              wordmark, is the property of ELLIS and may not be reproduced without permission.
+            </p>
+            <p>
+              ELLIS reserves the right to amend these terms at any time. Continued use of this
+              website following any changes constitutes acceptance of those changes.
+            </p>
+          </div>
         </div>
       </div>
     </section>

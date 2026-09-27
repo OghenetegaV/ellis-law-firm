@@ -10,30 +10,29 @@ type InsightsGridProps = {
 
 export function InsightsGrid({ variant = "preview" }: InsightsGridProps) {
   return (
-    <section className="border-t border-charcoal/10 bg-white">
-      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-20">
-        <Reveal>
-          <SectionEyebrow>Insights</SectionEyebrow>
-          <h2 className="mt-6 max-w-lg font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
-            Perspectives on law and business.
-          </h2>
-        </Reveal>
+    <section className="py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        {variant === "preview" && (
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <SectionEyebrow>Insights</SectionEyebrow>
+              <h2 className="mt-5 font-serif text-[clamp(2.5rem,4.5vw,4rem)] leading-none font-medium tracking-tight">
+                Perspectives on <span className="text-burgundy italic">law and business.</span>
+              </h2>
+            </div>
+            <Button href="/insights" variant="secondary">
+              All insights
+            </Button>
+          </Reveal>
+        )}
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <div className={`grid gap-6 md:grid-cols-3 ${variant === "preview" ? "mt-12" : ""}`}>
           {insightArticles.map((article, index) => (
-            <Reveal key={article.slug} delay={index * 100}>
+            <Reveal key={article.slug} delay={index * 120} className="h-full">
               <InsightCard {...article} />
             </Reveal>
           ))}
         </div>
-
-        {variant === "preview" && (
-          <div className="mt-12">
-            <Button href="/insights" variant="secondary">
-              View All Insights
-            </Button>
-          </div>
-        )}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import { PageHero } from "@/components/ui/PageHero";
 import { ApproachTimeline } from "@/components/timeline/ApproachTimeline";
 
 export const metadata: Metadata = {
@@ -11,17 +11,9 @@ export const metadata: Metadata = {
 export default function OurApproachPage() {
   return (
     <>
-      <section className="border-b border-charcoal/10 bg-white">
-        <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-24">
-          <SectionEyebrow>Our Approach</SectionEyebrow>
-          <h1 className="mt-6 max-w-2xl font-serif text-4xl leading-tight text-charcoal sm:text-6xl">
-            Five steps. Applied with care.
-          </h1>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-20">
+      <PageHero eyebrow="Our approach" title="Five steps." accent="Applied with care." />
+      <section className="pb-20 sm:pb-28">
+        <div className="mx-auto max-w-5xl px-6 sm:px-10">
           <ApproachTimeline />
         </div>
       </section>

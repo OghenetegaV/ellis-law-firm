@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import Link from "next/link";
+import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
-import { LineComposition } from "@/components/graphics/LineComposition";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    title: "Our Story",
+    title: "Our story",
     body: "ELLIS was founded on one conviction: every lawful liberty is significant.",
   },
   {
-    title: "Our Philosophy",
+    title: "Our philosophy",
     body: "Behind every legal question is someone with something significant at stake.",
   },
   {
-    title: "Our Approach",
+    title: "Our approach",
     body: "A structured process: understand, analyse, strategise, advise, represent.",
-    link: { href: "/our-approach", label: "See Our Approach" },
+    link: { href: "/our-approach", label: "See our approach" },
   },
   {
-    title: "Our Commitment",
+    title: "Our commitment",
     body: "Clarity, precision, strategy, integrity and discretion in every matter.",
   },
 ];
@@ -32,38 +32,29 @@ const sections = [
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-charcoal/10 bg-white">
-        <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-24">
-          <SectionEyebrow>About ELLIS</SectionEyebrow>
-          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-tight text-charcoal sm:text-6xl">
-            Built on principle. Guided by purpose.
-          </h1>
-        </div>
-      </section>
+      <PageHero eyebrow="About ELLIS" title="Built on principle." accent="Guided by purpose." />
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-[90rem] px-6 py-20 sm:px-10 sm:py-24">
-          <div className="grid gap-16 lg:grid-cols-[1px_1fr] lg:gap-16">
-            <div className="hidden lg:block">
-              <LineComposition orientation="vertical" strokeOpacity={0.7} />
-            </div>
-            <div className="max-w-2xl space-y-16">
-              {sections.map((section) => (
-                <Reveal key={section.title}>
-                  <h2 className="font-serif text-2xl text-charcoal sm:text-3xl">{section.title}</h2>
-                  <p className="mt-5 text-base leading-relaxed text-charcoal/70">{section.body}</p>
+      <section className="pb-20 sm:pb-28">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 sm:px-10 md:grid-cols-2">
+          {sections.map((section, index) => (
+            <Reveal key={section.title} delay={index * 100} className="h-full">
+              <div className="flex h-full min-h-[16rem] flex-col justify-between rounded-[2rem] bg-white p-8 shadow-card sm:p-10">
+                <span className="font-serif text-5xl italic text-antique-gold">0{index + 1}</span>
+                <div>
+                  <h2 className="font-serif text-4xl text-charcoal">{section.title}</h2>
+                  <p className="mt-3 text-base leading-relaxed text-charcoal/65">{section.body}</p>
                   {section.link && (
-                    <a
+                    <Link
                       href={section.link.href}
-                      className="link-underline mt-5 inline-flex w-fit text-xs font-semibold uppercase tracking-wide-cap text-burgundy"
+                      className="link-underline mt-5 text-sm font-semibold text-burgundy"
                     >
-                      {section.link.label}
-                    </a>
+                      {section.link.label} &rarr;
+                    </Link>
                   )}
-                </Reveal>
-              ))}
-            </div>
-          </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
     </>

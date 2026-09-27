@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import { PageHero } from "@/components/ui/PageHero";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { LineComposition } from "@/components/graphics/LineComposition";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,28 +10,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-24">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1px_1.1fr] lg:gap-16">
-          <div>
-            <SectionEyebrow>Contact ELLIS</SectionEyebrow>
-            <h1 className="mt-6 max-w-md font-serif text-4xl leading-tight text-charcoal sm:text-5xl">
-              Start with clarity.
-            </h1>
-            <p className="mt-8 max-w-sm text-base leading-relaxed text-charcoal/70">
-              Tell us what you need. We will respond in due course.
-            </p>
-          </div>
-
-          <div className="hidden lg:block">
-            <LineComposition orientation="vertical" strokeOpacity={0.7} />
-          </div>
-
-          <div className="max-w-xl">
+    <>
+      <PageHero eyebrow="Contact ELLIS" title="Start with" accent="clarity." />
+      <section className="pb-20 sm:pb-28">
+        <div className="mx-auto max-w-3xl px-6 sm:px-10">
+          <div className="rounded-[2rem] bg-white p-6 shadow-card sm:rounded-[2.5rem] sm:p-12">
             <ContactForm />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

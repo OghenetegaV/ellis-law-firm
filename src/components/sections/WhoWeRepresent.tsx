@@ -5,15 +5,18 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function WhoWeRepresent() {
   return (
-    <section className="border-t border-charcoal/10 bg-white">
-      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-20">
+    <section className="pb-20 sm:pb-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <Reveal>
-          <SectionEyebrow>Who We Represent</SectionEyebrow>
+          <SectionEyebrow>Who we represent</SectionEyebrow>
+          <h2 className="mt-5 font-serif text-[clamp(2.5rem,4.5vw,4rem)] leading-none font-medium tracking-tight">
+            For every <span className="text-burgundy italic">kind of client.</span>
+          </h2>
         </Reveal>
-        <div className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {representGroups.map((group, index) => (
-            <Reveal key={group.title} delay={index * 100}>
-              <RepresentColumn {...group} />
+            <Reveal key={group.title} delay={index * 120} className="h-full">
+              <RepresentColumn {...group} index={index} />
             </Reveal>
           ))}
         </div>

@@ -5,16 +5,21 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function WhatGuidesUs() {
   return (
-    <section className="bg-charcoal">
-      <div className="mx-auto max-w-[90rem] px-6 py-16 sm:px-10 sm:py-20">
+    <section className="py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <Reveal>
-          <SectionEyebrow tone="gold">What Guides Us</SectionEyebrow>
+          <SectionEyebrow>What guides us</SectionEyebrow>
+          <h2 className="mt-5 font-serif text-[clamp(2.5rem,4.5vw,4rem)] leading-none font-medium tracking-tight">
+            Five principles. <span className="text-burgundy italic">One standard.</span>
+          </h2>
         </Reveal>
-        <div className="mt-12 grid gap-x-16 sm:grid-cols-2">
-          {principles.map((principle, index) => (
-            <PrincipleBlock key={principle.title} {...principle} index={index} />
-          ))}
-        </div>
+        <Reveal delay={150}>
+          <div className="mt-12 flex flex-col gap-4 lg:flex-row">
+            {principles.map((principle, index) => (
+              <PrincipleBlock key={principle.title} {...principle} index={index} />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

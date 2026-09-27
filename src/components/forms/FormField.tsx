@@ -22,7 +22,7 @@ export function FormField({
   onChange,
 }: FormFieldProps) {
   const baseClasses =
-    "w-full border-0 border-b border-charcoal/25 bg-transparent px-0 py-3 text-charcoal placeholder:text-charcoal/35 focus:border-burgundy focus:outline-none transition-colors";
+    "w-full rounded-2xl border border-charcoal/12 bg-ivory/60 px-5 py-3.5 text-charcoal placeholder:text-charcoal/35 focus:border-burgundy focus:bg-white focus:outline-none transition-colors";
 
   return (
     <div>
@@ -39,7 +39,7 @@ export function FormField({
           onChange={(e) => onChange(name, e.target.value)}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${name}-error` : undefined}
-          className={`${baseClasses} mt-2 resize-none`}
+          className={`${baseClasses} mt-2.5 resize-none`}
         />
       ) : (
         <input
@@ -50,7 +50,7 @@ export function FormField({
           onChange={(e) => onChange(name, e.target.value)}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${name}-error` : undefined}
-          className={`${baseClasses} mt-2`}
+          className={`${baseClasses} mt-2.5`}
         />
       )}
       {error && (

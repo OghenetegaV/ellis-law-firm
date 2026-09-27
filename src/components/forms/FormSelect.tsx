@@ -22,7 +22,7 @@ export function FormSelect({ label, name, value, options, error, required, onCha
         onChange={(e) => onChange(name, e.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${name}-error` : undefined}
-        className="mt-2 w-full border-0 border-b border-charcoal/25 bg-transparent px-0 py-3 text-charcoal focus:border-burgundy focus:outline-none"
+        className="mt-2.5 w-full rounded-2xl border border-charcoal/12 bg-ivory/60 px-5 py-3.5 text-charcoal focus:border-burgundy focus:bg-white focus:outline-none"
       >
         <option value="" disabled>
           Select an option
