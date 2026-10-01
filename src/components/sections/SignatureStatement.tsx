@@ -10,7 +10,7 @@ export function SignatureStatement() {
           alt=""
           fill
           sizes="100vw"
-          className="animate-kenburns object-cover"
+          className="object-cover"
           style={{ objectPosition: "60% 40%" }}
         />
         <div className="absolute inset-0 bg-burgundy/80" aria-hidden="true" />

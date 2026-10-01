@@ -48,44 +48,34 @@ export const representGroups: RepresentGroup[] = [
 
 export const practiceAreas: PracticeArea[] = [
   {
-    slug: "litigation-dispute-resolution",
-    title: "Litigation & Dispute Resolution",
-    description: "Civil and commercial disputes.",
-  },
-  {
     slug: "corporate-commercial-law",
     title: "Corporate & Commercial Law",
-    description: "Transactions and commercial relationships.",
+    description:
+      "We advise businesses and organisations on incorporation, corporate structuring, governance, regulatory compliance, commercial transactions, contracts, partnerships, mergers and acquisitions, due diligence, and general corporate advisory.",
   },
   {
-    slug: "real-estate-property-law",
-    title: "Real Estate & Property Law",
-    description: "Property transactions and disputes.",
+    slug: "entertainment-media-law",
+    title: "Entertainment & Media Law",
+    description:
+      "We advise creatives, talent, media companies and entertainment businesses on contracts, licensing, intellectual property, publishing, production, endorsements, sponsorships, management arrangements, content creation, image rights and entertainment-related disputes.",
   },
   {
-    slug: "contracts-agreements",
-    title: "Contracts & Agreements",
-    description: "Drafting, review and negotiation.",
+    slug: "technology-digital-law",
+    title: "Technology & Digital Law",
+    description:
+      "We provide legal support for technology-driven businesses, digital platforms and emerging ventures, covering technology contracts, software and licensing arrangements, data protection, privacy, artificial intelligence, fintech, e-commerce, intellectual property and other digital legal matters.",
   },
   {
-    slug: "business-regulatory-compliance",
-    title: "Business & Regulatory Compliance",
-    description: "Navigating your legal obligations.",
+    slug: "property-real-estate-law",
+    title: "Property & Real Estate Law",
+    description:
+      "We advise on the acquisition, sale, development, leasing and management of real estate, including property due diligence, title and documentation, tenancy matters, mortgages, property transactions, development arrangements and disputes relating to land and property.",
   },
   {
-    slug: "alternative-dispute-resolution",
-    title: "Alternative Dispute Resolution",
-    description: "Resolving disputes without the courtroom.",
-  },
-  {
-    slug: "employment-workplace-matters",
-    title: "Employment & Workplace Matters",
-    description: "Employment relationships and workplace disputes.",
-  },
-  {
-    slug: "intellectual-property",
-    title: "Intellectual Property",
-    description: "Protecting and managing your IP.",
+    slug: "litigation-dispute-resolution",
+    title: "Litigation & Dispute Resolution",
+    description:
+      "We represent individuals, businesses and organisations in civil and commercial disputes, with services spanning litigation, arbitration, mediation, negotiation, debt recovery, contractual and property disputes, enforcement of judgments and appellate proceedings.",
   },
 ];
 

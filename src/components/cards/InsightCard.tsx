@@ -9,7 +9,7 @@ export function InsightCard({ category, title, date, slug }: InsightArticle) {
       className="group flex h-full min-h-[20rem] scroll-mt-32 flex-col justify-between rounded-[2rem] bg-white p-8 shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-soft"
     >
       <div className="flex items-center justify-between gap-3">
-        <span className="rounded-full bg-burgundy/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-burgundy">
+        <span className="rounded-full bg-burgundy/10 px-4 py-1.5 font-label text-[11px] font-semibold uppercase tracking-[0.12em] text-burgundy">
           {category}
         </span>
         <span className="text-xs text-charcoal/50">{date}</span>

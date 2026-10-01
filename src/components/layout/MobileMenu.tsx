@@ -10,7 +10,7 @@ const noopSubscribe = () => () => {};
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const closeRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
   const isMounted = useSyncExternalStore(
     noopSubscribe,
     () => true,
@@ -18,59 +18,47 @@ export function MobileMenu() {
   );
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (isOpen) {
-      closeRef.current?.focus();
-    } else {
-      triggerRef.current?.focus();
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
     if (!isOpen) return;
+
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") setIsOpen(false);
     }
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        panelRef.current &&
+        !panelRef.current.contains(event.target as Node) &&
+        !triggerRef.current?.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [isOpen]);
 
   const overlay = (
     <div
+      ref={panelRef}
       role="dialog"
       aria-modal="true"
       aria-label="Site navigation"
-      className={`fixed inset-0 z-[60] bg-ivory transition-opacity duration-300 ${
-        isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+      className={`fixed inset-x-0 top-20 z-50 origin-top border-b border-charcoal/10 bg-white shadow-card transition-all duration-200 ${
+        isOpen ? "pointer-events-auto scale-y-100 opacity-100" : "pointer-events-none scale-y-95 opacity-0"
       }`}
     >
-      <div className="flex items-center justify-end px-6 py-4">
-        <button
-          ref={closeRef}
-          type="button"
-          onClick={() => setIsOpen(false)}
-          aria-label="Close menu"
-          tabIndex={isOpen ? 0 : -1}
-          className="flex h-11 w-11 items-center justify-center text-2xl text-charcoal"
-        >
-          &times;
-        </button>
-      </div>
-
-      <nav aria-label="Site" className="flex flex-col gap-8 px-8 pt-8">
+      <nav aria-label="Site" className="mx-auto flex max-w-[90rem] flex-col gap-1 px-5 py-4 sm:px-8">
         {primaryNavLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             onClick={() => setIsOpen(false)}
             tabIndex={isOpen ? 0 : -1}
-            className="font-serif text-4xl text-charcoal transition-colors hover:text-burgundy"
+            className="rounded-md px-3 py-2.5 text-base font-medium text-charcoal transition-colors hover:bg-ivory hover:text-burgundy"
           >
             {link.label}
           </Link>
@@ -79,7 +67,7 @@ export function MobileMenu() {
           href="/contact"
           onClick={() => setIsOpen(false)}
           tabIndex={isOpen ? 0 : -1}
-          className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-burgundy px-8 py-4 text-[13px] font-semibold text-white"
+          className="mt-2 inline-flex w-fit items-center justify-center rounded-md bg-burgundy px-6 py-2.5 text-[13px] font-semibold text-white"
         >
           Contact ELLIS
         </Link>
@@ -92,15 +80,19 @@ export function MobileMenu() {
       <button
         ref={triggerRef}
         type="button"
-        onClick={() => setIsOpen(true)}
-        aria-label="Open menu"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
         className="flex h-11 w-11 flex-col items-center justify-center gap-[5px]"
       >
-        <span className="h-px w-6 bg-antique-gold" />
-        <span className="h-px w-6 bg-antique-gold" />
-        <span className="h-px w-6 bg-antique-gold" />
+        <span
+          className={`h-px w-6 bg-charcoal transition-transform duration-200 ${isOpen ? "translate-y-[6.5px] rotate-45" : ""}`}
+        />
+        <span className={`h-px w-6 bg-charcoal transition-opacity duration-200 ${isOpen ? "opacity-0" : ""}`} />
+        <span
+          className={`h-px w-6 bg-charcoal transition-transform duration-200 ${isOpen ? "-translate-y-[6.5px] -rotate-45" : ""}`}
+        />
       </button>
 
       {isMounted ? createPortal(overlay, document.body) : null}

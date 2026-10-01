@@ -10,7 +10,8 @@
   --color-sand: #ece3d5;
 
   --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-manrope), Helvetica, Arial, sans-serif;
+  --font-label: var(--font-dm-sans), Helvetica, Arial, sans-serif;
 
   --tracking-eyebrow: 0.22em;
   --tracking-wide-cap: 0.08em;
@@ -67,7 +68,7 @@
 
 @layer utilities {
   .eyebrow {
-    font-family: var(--font-sans);
+    font-family: var(--font-label);
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: var(--tracking-eyebrow);

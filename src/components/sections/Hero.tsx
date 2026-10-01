@@ -2,7 +2,8 @@ import Image from "next/image";
 import { Blobs } from "@/components/ui/Blobs";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { RotatingBadge } from "@/components/ui/RotatingBadge";
+
+const values = ["Clarity", "Precision", "Strategy", "Integrity", "Discretion"];
 
 export function Hero() {
   return (
@@ -39,6 +40,16 @@ export function Hero() {
               </Button>
             </div>
           </Reveal>
+
+          <Reveal delay={400}>
+            <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-charcoal/10 pt-8">
+              {values.map((value) => (
+                <li key={value} className="eyebrow text-charcoal/50">
+                  {value}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
 
         <Reveal delay={200} className="relative mx-auto w-full max-w-md lg:max-w-none">
@@ -49,17 +60,15 @@ export function Hero() {
             />
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-full rounded-b-[2rem] shadow-card">
               <Image
-                src="/hero-image.png"
-                alt="Classical stone columns against a burgundy wall"
+                src="/founder-3.jpeg"
+                alt="ELLIS founder, seated, in barrister's wig and gown"
                 fill
                 priority
                 sizes="(min-width: 1024px) 28rem, 90vw"
-                className="animate-kenburns object-cover"
-                style={{ objectPosition: "72% center" }}
+                className="object-cover"
+                style={{ objectPosition: "center 20%" }}
               />
             </div>
-
-            <RotatingBadge className="absolute -left-6 bottom-16 h-28 w-28 animate-float rounded-full bg-ivory p-1 text-burgundy shadow-soft sm:-left-14 sm:h-36 sm:w-36" />
           </div>
         </Reveal>
       </div>

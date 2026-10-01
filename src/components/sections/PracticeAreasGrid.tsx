@@ -9,7 +9,7 @@ type PracticeAreasGridProps = {
 };
 
 export function PracticeAreasGrid({ variant = "preview" }: PracticeAreasGridProps) {
-  const areas = variant === "preview" ? practiceAreas.slice(0, 6) : practiceAreas;
+  const areas = practiceAreas;
 
   return (
     <section className="px-3 pb-6 sm:px-6">
@@ -29,7 +29,7 @@ export function PracticeAreasGrid({ variant = "preview" }: PracticeAreasGridProp
             </Reveal>
           ) : (
             <Reveal className="lg:sticky lg:top-32 lg:self-start">
-              <SectionEyebrow tone="gold">Eight areas</SectionEyebrow>
+              <SectionEyebrow tone="gold">Five areas</SectionEyebrow>
               <p className="mt-5 max-w-xs font-serif text-3xl italic leading-snug text-white/80">
                 Every matter, handled with care.
               </p>
