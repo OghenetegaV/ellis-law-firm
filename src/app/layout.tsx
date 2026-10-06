@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+```tsx
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
@@ -26,45 +27,107 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const siteTitle = "ELLIS | Barristers & Solicitors | Nigeria";
+// IMPORTANT: Replace this with the official custom domain
+// when it is ready and configured.
+const SITE_URL = "https://ellis.com.ng";
+
+const siteTitle = "ELLIS Law Firm | Barristers & Solicitors in Nigeria";
+
 const siteDescription =
-  "ELLIS provides strategic legal counsel and representation to individuals, businesses and organisations in Nigeria.";
+  "ELLIS is a Nigerian law firm providing strategic legal counsel, " +
+  "legal advisory services and representation to individuals, " +
+  "businesses and organisations.";
+
 const ogImage = {
   url: "/og-image.png",
   width: 1920,
   height: 1080,
-  alt: "Every Lawful Liberty Is Significant — an ELLIS folio held with quiet confidence",
+  alt: "ELLIS Law Firm — Every Lawful Liberty Is Significant",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ellis-firm.vercel.app"),
+  metadataBase: new URL(SITE_URL),
+
+  applicationName: "ELLIS Law Firm",
+
   title: {
     default: siteTitle,
-    template: "%s | ELLIS",
+    template: "%s | ELLIS Law Firm",
   },
+
   description: siteDescription,
+
+  // Google Search Console verification
+  verification: {
+    google: "x8kVfiuza6TxOVTpincafPjmJ1cpNmRjTusErgKjJE8",
+  },
+
+  // Do not set a global canonical URL here.
+  // Define the correct canonical URL for each indexable page.
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   openGraph: {
+    type: "website",
+    locale: "en_NG",
+    url: SITE_URL,
+    siteName: "ELLIS Law Firm",
     title: siteTitle,
     description: siteDescription,
-    type: "website",
     images: [ogImage],
   },
+
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
     images: [ogImage.url],
   },
+
+  category: "legal services",
+
+  // These paths should exist in your public directory.
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#6B2635",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${manrope.variable} ${dmSans.variable}`}>
+    <html
+      lang="en-NG"
+      className={`${cormorant.variable} ${manrope.variable} ${dmSans.variable}`}
+    >
       <body className="flex min-h-screen flex-col bg-ivory font-sans text-charcoal antialiased">
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
   );
 }
+```
