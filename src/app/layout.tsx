@@ -1,4 +1,3 @@
-```tsx
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -27,16 +26,12 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-// IMPORTANT: Replace this with the official custom domain
-// when it is ready and configured.
-const SITE_URL = "https://ellis.com.ng";
+export const SITE_URL = "https://ellis.com.ng";
 
 const siteTitle = "ELLIS Law Firm | Barristers & Solicitors in Nigeria";
 
 const siteDescription =
-  "ELLIS is a Nigerian law firm providing strategic legal counsel, " +
-  "legal advisory services and representation to individuals, " +
-  "businesses and organisations.";
+  "ELLIS is a modern Nigerian law firm providing strategic legal counsel, advisory services and representation to individuals, businesses and organisations.";
 
 const ogImage = {
   url: "/og-image.png",
@@ -57,13 +52,37 @@ export const metadata: Metadata = {
 
   description: siteDescription,
 
-  // Google Search Console verification
+  keywords: [
+    "ELLIS Law Firm",
+    "law firm Nigeria",
+    "Nigerian law firm",
+    "barristers and solicitors Nigeria",
+    "legal counsel Nigeria",
+    "legal services Nigeria",
+    "corporate law Nigeria",
+    "commercial law Nigeria",
+    "technology law Nigeria",
+    "real estate law Nigeria",
+    "entertainment law Nigeria",
+    "litigation Nigeria",
+    "dispute resolution Nigeria",
+  ],
+
+  authors: [
+    {
+      name: "ELLIS Law Firm",
+      url: SITE_URL,
+    },
+  ],
+
+  creator: "ELLIS Law Firm",
+  publisher: "ELLIS Law Firm",
+
+  category: "Legal Services",
+
   verification: {
     google: "x8kVfiuza6TxOVTpincafPjmJ1cpNmRjTusErgKjJE8",
   },
-
-  // Do not set a global canonical URL here.
-  // Define the correct canonical URL for each indexable page.
 
   robots: {
     index: true,
@@ -80,8 +99,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: SITE_URL,
     siteName: "ELLIS Law Firm",
+    url: SITE_URL,
     title: siteTitle,
     description: siteDescription,
     images: [ogImage],
@@ -94,13 +113,8 @@ export const metadata: Metadata = {
     images: [ogImage.url],
   },
 
-  category: "legal services",
-
-  // These paths should exist in your public directory.
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/icon.svg",
   },
 };
 
@@ -108,6 +122,63 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#6B2635",
+  colorScheme: "light",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": `${SITE_URL}/#organization`,
+      name: "ELLIS Law Firm",
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      image: `${SITE_URL}/og-image.png`,
+      description: siteDescription,
+      areaServed: {
+        "@type": "Country",
+        name: "Nigeria",
+      },
+      serviceType: [
+        "Corporate & Commercial Law",
+        "Entertainment & Media Law",
+        "Technology & Digital Law",
+        "Property & Real Estate Law",
+        "Litigation & Dispute Resolution",
+      ],
+      knowsAbout: [
+        "Corporate Law",
+        "Commercial Law",
+        "Contract Law",
+        "Entertainment Law",
+        "Media Law",
+        "Technology Law",
+        "Digital Law",
+        "Data Protection",
+        "Privacy Law",
+        "Intellectual Property",
+        "Real Estate Law",
+        "Property Law",
+        "Litigation",
+        "Arbitration",
+        "Mediation",
+        "Dispute Resolution",
+      ],
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "ELLIS Law Firm",
+      description: siteDescription,
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+      inLanguage: "en-NG",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -120,14 +191,24 @@ export default function RootLayout({
       lang="en-NG"
       className={`${cormorant.variable} ${manrope.variable} ${dmSans.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
+      </head>
+
       <body className="flex min-h-screen flex-col bg-ivory font-sans text-charcoal antialiased">
         <Nav />
+
         <main id="main-content" className="flex-1">
           {children}
         </main>
+
         <Footer />
       </body>
     </html>
   );
 }
-```
